@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Login_society</string>
+    <string name="input_error_name">Please enter the name</string>
+    <string name="input_error_email">please enter the email</string>
+    <string name="input_error_phone">Enter the phone number</string>
+    <string name="input_error_phone_invalid">Enter 10 digit number</string>
+    <string name="input_error_password">Enter the password</string>
+    <string name="input_error_password_length">Password length must be 6 character</string>
+    <string name="input_confocode_msg">Enter correct password</string>
+</resources>
