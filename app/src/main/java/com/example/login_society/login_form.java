@@ -16,12 +16,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class login_form extends AppCompatActivity {
 
     EditText txtEmail,txtPassword;
     Button btn_login;
     FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,21 @@ public class login_form extends AppCompatActivity {
         txtPassword=(EditText)findViewById(R.id.password);
         btn_login=(Button)findViewById(R.id.button);
         firebaseAuth=FirebaseAuth.getInstance();
+
+
+
+        firebaseAuth=FirebaseAuth.getInstance();
+        firebaseUser=firebaseAuth.getCurrentUser();
+
+        if(firebaseUser != null)
+        {
+            Intent intent=new Intent(login_form.this,home_activity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            login_form.this.finish();
+
+        }
 
         initialize();
     }
@@ -79,7 +96,7 @@ public class login_form extends AppCompatActivity {
                                     startActivity(new Intent(getApplicationContext(),home_activity.class));
 
                                 } else {
-                                    Toast.makeText(login_form.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(login_form.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
 
                                 // ...

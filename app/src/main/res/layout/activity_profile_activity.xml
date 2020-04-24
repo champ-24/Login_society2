@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile_activity">
+    tools:context=".profile_activity"
+    android:padding="30dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,6 +13,12 @@
         android:text="PROFILE"
         android:textSize="30dp"
         android:layout_centerInParent="true"
+        />
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGNOUT"
         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
