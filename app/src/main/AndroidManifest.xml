@@ -15,10 +15,10 @@
         <activity android:name=".transaction_activity" />
         <activity android:name=".procurment_activity" />
         <activity android:name=".home_activity" />
-        <activity android:name=".Joining_form" />
+        <activity android:name=".Splash_screen" />
         <activity android:name=".Registration_form" />
         <activity android:name=".login_form" />
-        <activity android:name=".Splash_screen">
+        <activity android:name=".Joining_form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

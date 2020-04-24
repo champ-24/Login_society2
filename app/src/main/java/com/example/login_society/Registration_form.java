@@ -1,11 +1,19 @@
 package com.example.login_society;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -13,10 +21,11 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Registration_form extends AppCompatActivity {
 
 
-    TextInputEditText fullname,phoneno,email,officeno,societyname,societyaddr,passcode,confopasscode;
+    TextInputEditText fullname,phoneno,email,officeno,societyname,societyaddr,password,confopasscode;
     Button reg_btn;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    FirebaseAuth firebaseAuth;
 
         @Override
         protected void onCreate (Bundle savedInstanceState){
@@ -31,15 +40,17 @@ public class Registration_form extends AppCompatActivity {
             officeno=(TextInputEditText)findViewById(R.id.off_no);
             societyaddr=(TextInputEditText)findViewById(R.id.soc_addr);
             societyname=(TextInputEditText)findViewById(R.id.soc_name);
-            passcode=(TextInputEditText)findViewById(R.id.passcode);
+            password=(TextInputEditText)findViewById(R.id.password);
             confopasscode=(TextInputEditText)findViewById(R.id.confo_passcode);
             reg_btn=(Button) findViewById(R.id.reg_btn);
+
+            firebaseDatabase=FirebaseDatabase.getInstance();
+            databaseReference=firebaseDatabase.getReference("Society");
+            firebaseAuth=FirebaseAuth.getInstance();
 
             reg_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    firebaseDatabase=FirebaseDatabase.getInstance();
-                    databaseReference=firebaseDatabase.getReference("Society");
                     reg_user();
                 }
             });
@@ -54,7 +65,7 @@ public class Registration_form extends AppCompatActivity {
         final String off_no=officeno.getText().toString().trim();
         final String soc_nm=societyname.getText().toString().trim();
         final String soc_addr=societyaddr.getText().toString().trim();
-        String pass_code=passcode.getText().toString().trim();
+        String pass_code=password.getText().toString().trim();
         String confo_code=confopasscode.getText().toString().trim();
 
 
@@ -98,27 +109,53 @@ public class Registration_form extends AppCompatActivity {
         }
 
         if (pass_code.isEmpty()) {
-            passcode.setError(getString(R.string.input_error_password));
-            passcode.requestFocus();
+            password.setError(getString(R.string.input_error_password));
+            password.requestFocus();
             return;
         }
 
         if (pass_code.length() < 6) {
-            passcode.setError(getString(R.string.input_error_password_length));
-            passcode.requestFocus();
+            password.setError(getString(R.string.input_error_password_length));
+            password.requestFocus();
             return;
         }
         if(!confo_code.equals(pass_code))
         {
             confopasscode.setError((getString((R.string.input_confocode_msg))));
             confopasscode.requestFocus();
-            passcode.setText("");
+            password.setText("");
             confopasscode.setText("");
             return;
         }
 
-        DbHelperClass helperClass=new DbHelperClass(name,soc_nm,soc_addr,ph_no,off_no,semail);
-        databaseReference.child(soc_nm).child(name).setValue(helperClass);
+        firebaseAuth.createUserWithEmailAndPassword(semail, pass_code)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+
+                            DbHelperClass helperClass=new DbHelperClass(name,soc_nm,soc_addr,ph_no,off_no,semail);
+                            databaseReference.child(firebaseAuth.getCurrentUser().getUid()).setValue(helperClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+
+                                    Toast.makeText(Registration_form.this, "Rigistration Complete", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(),home_activity.class));
+                                }
+                            });
+
+                        } else {
+
+                            Toast.makeText(Registration_form.this, "Some Error Occured", Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        // ...
+                    }
+                });
+
+
+
 
     }
 }
