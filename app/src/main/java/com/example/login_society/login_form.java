@@ -43,6 +43,7 @@ public class login_form extends AppCompatActivity {
 
         if(firebaseUser != null)
         {
+            finish();
             Intent intent=new Intent(login_form.this,home_activity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -60,6 +61,7 @@ public class login_form extends AppCompatActivity {
         txt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(getApplicationContext(),Choosingact.class));
             }
         });
@@ -92,8 +94,8 @@ public class login_form extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-
-                                    startActivity(new Intent(getApplicationContext(),home_activity.class));
+                                    finish();
+                                    startActivity(new Intent(login_form.this,home_activity.class));
 
                                 } else {
                                     Toast.makeText(login_form.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
