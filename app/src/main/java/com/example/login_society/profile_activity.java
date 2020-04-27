@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -129,7 +130,12 @@ public class profile_activity extends AppCompatActivity {
                 return false;
             }
         });
-        Signout();
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Signout();
+            }
+            });
 
 
 
@@ -140,16 +146,14 @@ public class profile_activity extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
 
-        signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
                 firebaseAuth.signOut();
                 Intent intent=new Intent(profile_activity.this,login_form.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                Toast.makeText(profile_activity.this, "ISGN OUT SUCESSFULLY", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
-        });
     }
 
-}
+

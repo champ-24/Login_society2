@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login_society</string>
+    <string name="app_name">HSM</string>
     <string name="input_error_name">Please enter the name</string>
     <string name="input_error_email">please enter the email</string>
     <string name="input_error_phone">Enter the phone number</string>

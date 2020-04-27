@@ -13,7 +13,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        tools:srcCompat="@tools:sample/avatars"
+        tools:srcCompat="@drawable/googleg_standard_color_18"
         android:padding="50dp"/>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
