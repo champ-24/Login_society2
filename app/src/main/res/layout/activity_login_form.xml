@@ -11,10 +11,12 @@
 
 
     <ImageView
+        android:id="@+id/applogo"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        tools:srcCompat="@drawable/googleg_standard_color_18"
-        android:padding="50dp"/>
+        android:layout_height="200sp"
+        android:src="@drawable/hsm_logo"
+        android:padding="20dp"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
