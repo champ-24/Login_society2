@@ -34,7 +34,7 @@ public class DisplayEvents extends AppCompatActivity {
         setContentView(R.layout.activity_display_events);
 
         database=FirebaseDatabase.getInstance();
-        databaseReference=database.getReference("Event");
+        databaseReference=database.getReference().child("Society").child("Event");
 
         user = new User();
         list= new ArrayList<>();

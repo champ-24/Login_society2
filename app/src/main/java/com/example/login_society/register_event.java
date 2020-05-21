@@ -40,7 +40,7 @@ public class register_event extends AppCompatActivity {
 
 
         //firebase database reference get the instance of the databse of our
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Event");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Society").child("Event");
 
         date.setInputType(InputType.TYPE_NULL);
         date.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +110,7 @@ public class register_event extends AppCompatActivity {
                 databaseReference.push().setValue((events));
 
                     Toast.makeText(register_event.this, "Data Insertion Sucessful", Toast.LENGTH_SHORT).show();
-                
+
 
 
             }
