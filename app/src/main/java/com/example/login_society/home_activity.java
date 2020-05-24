@@ -1,33 +1,62 @@
 package com.example.login_society;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import android.view.Window;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-public class home_activity extends AppCompatActivity {
+public class home_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button event_btn;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_activity);
 
-        event_btn = findViewById(R.id.event_button);
 
-        event_btn.setOnClickListener(new View.OnClickListener() {
+        Initialization();
+
+        setSupportActionBar(toolbar);
+
+        navigationView.bringToFront();
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar, R.string.open_nav, R.string.close_nav);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
+
+        /*event_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(home_activity.this,DisplayEvents.class));
             }
-        });
+        });*/
+
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.my_nav);
 
@@ -52,7 +81,7 @@ public class home_activity extends AppCompatActivity {
                         return true;
 
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),profile_activity.class));
+                        startActivity(new Intent(getApplicationContext(), profile_activity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -61,4 +90,51 @@ public class home_activity extends AppCompatActivity {
         });
 
     }
+
+    private void Initialization() {
+        drawerLayout=findViewById(R.id.drawer_layout);
+        navigationView=findViewById(R.id.nav_drawer);
+        toolbar=findViewById(R.id.toolbar);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }else{
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        switch (menuItem.getItemId()){
+            case R.id.nav_events:
+                Intent intent = new Intent(this, DisplayEvents.class);
+                startActivity(intent);
+                break;
+
+            case R.id.nav_associates:
+                Intent intent1 = new Intent(this,Associates.class);
+                startActivity(intent1);
+                break;
+
+            case R.id.nav_complain:
+                Intent intent2 = new Intent(this,user_complaint.class);
+                startActivity(intent2);
+                break;
+
+            case R.id.nav_notice:
+                Intent intent3 = new Intent(this,user_notice.class);
+                startActivity(intent3);
+                break;
+        }
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
 }
+
+

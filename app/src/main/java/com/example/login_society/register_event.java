@@ -1,7 +1,5 @@
 package com.example.login_society;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
@@ -12,6 +10,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -110,7 +110,8 @@ public class register_event extends AppCompatActivity {
                 databaseReference.push().setValue((events));
 
                     Toast.makeText(register_event.this, "Data Insertion Sucessful", Toast.LENGTH_SHORT).show();
-
+                    finish();
+                
 
 
             }

@@ -9,4 +9,10 @@
     <string name="input_confocode_msg">Enter correct password</string>
     <string name="title_activity_event_display">event_display</string>
     <string name="input_error_event_name">Cannot Be Empty</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="associates">Associates</string>
+    <string name="complain">Complain</string>
+    <string name="notice">Notice</string>
+    <string name="events">Events</string>
 </resources>

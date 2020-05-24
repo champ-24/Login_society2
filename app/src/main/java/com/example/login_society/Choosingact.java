@@ -1,11 +1,11 @@
 package com.example.login_society;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Choosingact extends AppCompatActivity {
 
@@ -22,14 +22,14 @@ public class Choosingact extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Registration_form.class));
+                startActivity(new Intent(getApplicationContext(), Registration_form.class));
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Joining_form.class));
+                startActivity(new Intent(getApplicationContext(), Joining_form.class));
             }
         });
 

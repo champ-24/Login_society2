@@ -1,8 +1,5 @@
 package com.example.login_society;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -110,7 +110,7 @@ public class profile_activity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),home_activity.class));
+                        startActivity(new Intent(getApplicationContext(), home_activity.class));
                         overridePendingTransition(0,0);
                         return true;
 
@@ -148,7 +148,7 @@ public class profile_activity extends AppCompatActivity {
 
 
                 firebaseAuth.signOut();
-                Intent intent=new Intent(profile_activity.this,login_form.class);
+                Intent intent=new Intent(profile_activity.this, login_form.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 Toast.makeText(profile_activity.this, "ISGN OUT SUCESSFULLY", Toast.LENGTH_SHORT).show();

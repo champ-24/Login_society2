@@ -1,13 +1,13 @@
 package com.example.login_society;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -44,14 +44,14 @@ public class DisplayEvents extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(DisplayEvents.this,register_event.class);
+                Intent i = new Intent(DisplayEvents.this, register_event.class);
                 startActivity(i);
             }
         });
 
 
 
-        adapter = new ArrayAdapter<>(this,R.layout.eventhold,R.id.event_info,list);
+        adapter = new ArrayAdapter<>(this, R.layout.eventhold, R.id.event_info,list);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

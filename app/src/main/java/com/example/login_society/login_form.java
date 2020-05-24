@@ -1,8 +1,5 @@
 package com.example.login_society;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,11 +29,11 @@ public class login_form extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_form);
-        getSupportActionBar().setTitle("LoginForm");
+        //getSupportActionBar().setTitle("LoginForm");
 
-        txtEmail=(EditText)findViewById(R.id.et_email);
-        txtPassword=(EditText)findViewById(R.id.password);
-        btn_login=(Button)findViewById(R.id.button);
+        txtEmail=findViewById(R.id.et_email);
+        txtPassword=findViewById(R.id.password);
+        btn_login=findViewById(R.id.button);
         firebaseAuth=FirebaseAuth.getInstance();
 
 
@@ -44,7 +44,7 @@ public class login_form extends AppCompatActivity {
         if(firebaseUser != null)
         {
             finish();
-            Intent intent=new Intent(login_form.this,home_activity.class);
+            Intent intent=new Intent(login_form.this, home_activity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
@@ -62,7 +62,7 @@ public class login_form extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(),Choosingact.class));
+                startActivity(new Intent(getApplicationContext(), Choosingact.class));
             }
         });
 
@@ -95,7 +95,7 @@ public class login_form extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     finish();
-                                    startActivity(new Intent(login_form.this,home_activity.class));
+                                    startActivity(new Intent(login_form.this, home_activity.class));
 
                                 } else {
                                     Toast.makeText(login_form.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();

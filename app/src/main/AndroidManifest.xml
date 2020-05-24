@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".timepass"></activity>
+        <activity android:name=".register_notice"></activity>
+        <activity android:name=".user_notice" />
+        <activity android:name=".register_complaint" />
+        <activity android:name=".user_complaint" />
+        <activity android:name=".Associates" />
         <activity android:name=".DisplayEvents" />
         <activity android:name=".register_event" />
         <activity android:name=".MainActivity" />
@@ -17,7 +21,9 @@
         <activity android:name=".profile_activity" />
         <activity android:name=".transaction_activity" />
         <activity android:name=".procurment_activity" />
-        <activity android:name=".home_activity" />
+        <activity
+            android:name=".home_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Joining_form" />
         <activity android:name=".Registration_form" />
         <activity android:name=".login_form" />

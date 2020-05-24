@@ -6,4 +6,6 @@
     <color name="black">#000000</color>
     <color name="White">#FFFFFF</color>
     <color name="mix">#8F4166</color>
+    <color name="saps_end">#FF004D</color>
+    <color name="saps_start">#590050</color>
 </resources>

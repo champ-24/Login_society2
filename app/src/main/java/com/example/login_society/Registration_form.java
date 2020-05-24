@@ -1,13 +1,13 @@
 package com.example.login_society;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.view.View;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -45,7 +45,6 @@ public class Registration_form extends AppCompatActivity {
 
             firebaseDatabase=FirebaseDatabase.getInstance();
             databaseReference=firebaseDatabase.getReference("Society");
-            databaseReference=databaseReference.child("");
             firebaseAuth=FirebaseAuth.getInstance();
 
             reg_btn.setOnClickListener(new View.OnClickListener() {
@@ -140,7 +139,7 @@ public class Registration_form extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
 
                                     Toast.makeText(Registration_form.this, "Rigistration Complete", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(),home_activity.class));
+                                    startActivity(new Intent(getApplicationContext(), home_activity.class));
                                 }
                             });
 
