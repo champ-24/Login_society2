@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.login_society">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/hsm_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Associates"/>
+        <activity android:name=".DisplayEvents" />
+        <activity android:name=".register_event" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Choosingact" />
+        <activity android:name=".profile_activity" />
+        <activity android:name=".transaction_activity" />
+        <activity android:name=".procurment_activity" />
+        <activity android:name=".home_activity" />
+        <activity android:name=".Joining_form" />
+        <activity android:name=".Registration_form" />
+        <activity android:name=".login_form" />
+        <activity android:name=".Splash_screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

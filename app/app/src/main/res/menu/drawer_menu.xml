@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_associates"
+            android:title="@string/associates"
+            android:icon="@drawable/ic_associates">
+        </item>
+
+        <item
+            android:id="@+id/nav_complain"
+            android:title="@string/complain"
+            android:icon="@drawable/ic_complaint">
+        </item>
+
+        <item
+            android:id="@+id/nav_notice"
+            android:title="@string/notice"
+            android:icon="@drawable/ic_notice">
+        </item>
+
+        <item
+            android:id="@+id/nav_events"
+            android:title="@string/events"
+            android:icon="@drawable/ic_event_">
+        </item>
+    </group>
+
+</menu>

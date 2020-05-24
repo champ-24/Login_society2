@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0D383F</color>
+    <color name="colorPrimaryDark">#2D383F</color>
+    <color name="colorAccent">#6FECECE5</color>
+    <color name="black">#000000</color>
+    <color name="White">#FFFFFF</color>
+    <color name="mix">#8F4166</color>
+    <color name="saps_end">#FF004D</color>
+    <color name="saps_start">#590050</color>
+</resources>

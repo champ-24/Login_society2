@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_color"
+    tools:context=".Splash_screen"
+    android:accessibilityPaneTitle="false">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_marginTop="150dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/hsm_logo"
+        android:translationX="60dp"
+        />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="240dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:translationX="-140dp"
+        android:translationY="500dp"
+        tools:srcCompat="@drawable/saps_logo" />
+
+
+</LinearLayout>

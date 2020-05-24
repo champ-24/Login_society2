@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/gradient_color"
+    tools:context=".register_event">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="15dp"
+    android:textColor="@color/White"
+    android:text="**Enter the Time And Date According To Free Time"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:focusable="true"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:focusableInTouchMode="true"
+        tools:ignore="MissingConstraints">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/host"
+            android:layout_height="wrap_content"
+            android:hint="Event Host"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:ems="10"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:focusable="true"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:focusableInTouchMode="true"
+        tools:ignore="MissingConstraints">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/event_name"
+            android:layout_height="wrap_content"
+            android:hint="Event Name"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:ems="10"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:focusable="true"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:focusableInTouchMode="true"
+        tools:ignore="MissingConstraints">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/desc"
+            android:layout_height="wrap_content"
+            android:hint="Short Description"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:ems="10"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:focusable="true"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:focusableInTouchMode="true"
+        tools:ignore="MissingConstraints">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/date"
+            android:layout_height="wrap_content"
+            android:hint="Enter the Date"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:ems="10"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:focusable="true"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:focusableInTouchMode="true"
+        tools:ignore="MissingConstraints">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/time"
+            android:layout_height="wrap_content"
+            android:hint="Event Time"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:ems="10"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_style"
+        android:text="SAVE" />
+
+</LinearLayout>
