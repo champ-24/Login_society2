@@ -74,8 +74,5 @@ public class user_complaint extends AppCompatActivity {
 
             }
         });
-
-
-
     }
 }
