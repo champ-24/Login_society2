@@ -36,7 +36,8 @@ public class user_complaint extends AppCompatActivity {
         setContentView(R.layout.activity_user_complaint);
 
 
-
+//used for the displaying the complaint of users
+        
         database=FirebaseDatabase.getInstance();
         databaseReference=database.getReference().child("Society").child("Complaint");
 
