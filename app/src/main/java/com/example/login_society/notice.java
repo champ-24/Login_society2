@@ -26,7 +26,7 @@ public class notice {
         return host;
     }
 
-    public void setHost(String date) {
+    public void setHost(String host) {
         this.host = host;
     }
 }

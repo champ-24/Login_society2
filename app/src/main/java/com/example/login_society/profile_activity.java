@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 public class profile_activity extends AppCompatActivity {
 
     Button signout;
+    TextView activity_name;
+   Toolbar toolbar;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     FirebaseDatabase firebaseDatabase;
@@ -36,10 +39,10 @@ public class profile_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_activity);
-        getSupportActionBar().setTitle("Profile");
 
-
-
+        toolbar=findViewById(R.id.toolbar);
+        activity_name=findViewById(R.id.activity_name);
+        activity_name.setText("Profile");
 
 
 //init fire base for dispplay
@@ -120,7 +123,7 @@ public class profile_activity extends AppCompatActivity {
                         return true ;
 
                     case R.id.proc:
-                        startActivity(new Intent(getApplicationContext(), procurment_activity.class));
+                        startActivity(new Intent(getApplicationContext(), procurement_activity.class));
                         overridePendingTransition(0, 0);
                         return true;
 

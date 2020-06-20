@@ -1,5 +1,6 @@
 package com.example.login_society;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
@@ -7,7 +8,8 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Splash_screen extends AppCompatActivity {
+public class Splash_screen extends AppCompatActivity{
+    ImageView img,img2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class Splash_screen extends AppCompatActivity {
     }
     public void initiate()
     {
-        ImageView img=findViewById(R.id.imageView2);
+        img=findViewById(R.id.imageView2);
+        img2=findViewById(R.id.imageView4);
     }
 }

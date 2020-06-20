@@ -1,6 +1,6 @@
 package com.example.login_society;
 
-class User {
+public class User {
 
     private String event_name;
     private String description;
