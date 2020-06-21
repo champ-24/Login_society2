@@ -66,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_style"
+        android:textColor="@color/White"
         android:text="Button" />
 
     <TextView
@@ -75,8 +76,9 @@
         android:layout_marginTop="80dp"
         android:gravity="center"
         android:text="REGISTER"
+        android:textSize="20sp"
         android:fontFamily="monospace"
-        android:textColor="#02075D" />
+        android:textColor="@color/White"/>
 
 
 </LinearLayout>

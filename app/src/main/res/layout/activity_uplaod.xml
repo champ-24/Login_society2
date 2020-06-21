@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_color"
+    android:padding="20dp"
+    tools:context=".Upload">
+
+    <ImageView
+        android:id="@+id/upload_img"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/upload_moments"
+        android:elevation="8dp"
+        tools:src="@tools:sample/backgrounds/scenic[1]"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:targetApi="lollipop">
+
+    </ImageView>
+
+    <Button
+        android:id="@+id/select_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/upload_img"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_style"
+        android:text="@string/select_image"
+        android:onClick="selectImg"
+        android:padding="5dp"
+        android:textColor="@color/White">
+
+    </Button>
+
+    <EditText
+        android:id="@+id/upload_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/select_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="@string/enter_caption"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="@color/White">
+
+    </EditText>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/upload_caption"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_style"
+        android:text="@string/upload"
+        android:textColor="@color/White"
+        android:onClick="upload">
+
+    </Button>
+
+
+</RelativeLayout>

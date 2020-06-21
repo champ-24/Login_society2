@@ -22,14 +22,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:background="@drawable/btn_style"
-        android:text="REGISTER SOCIETY" />
+        android:text="REGISTER SOCIETY"
+        android:textColor="@color/White"/>
 
     <Button
         android:id="@+id/join_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:textColor="@color/black"
+        android:textColor="@color/White"
         android:background="@drawable/btn_style"
         android:text="JOIN SOCIETY" />
 
