@@ -12,16 +12,16 @@
     <item
         android:id="@+id/proc"
         android:title="Procurments"
-        android:icon="@drawable/ic_bookmark_black_24dp"/>
+        android:icon="@drawable/ic_procurement"/>
 
     <item
         android:id="@+id/transaction"
         android:title="Transaction"
-        android:icon="@drawable/transaction"/>
+        android:icon="@drawable/ic_transaction"/>
 
     <item
         android:id="@+id/profile"
         android:title="Profile"
-        android:icon="@drawable/ic_people_black_24dp"
+        android:icon="@drawable/ic_person_black_24dp"
         />
 </menu>

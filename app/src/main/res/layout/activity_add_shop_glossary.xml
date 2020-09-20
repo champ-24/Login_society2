@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddShopGrossary"
+    android:padding="10dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_name"
+        android:background="@color/saps_end"
+        android:text="Activity Name"
+        android:textSize="24sp"
+        android:textColor="@color/White"
+        >
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/glossary_shop_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/shop_name"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/saps_start"
+        android:textSize="20sp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/glossary_shop_owner_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/glossary_shop_name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/shop_owner_name"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/saps_start"
+        android:textSize="20sp">
+
+    </EditText>
+    <EditText
+        android:id="@+id/glossary_shop_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/glossary_shop_owner_name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/contact"
+        android:inputType="phone"
+        android:textColorHint="@color/saps_start"
+        android:textSize="20sp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/glossary_shop_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/glossary_shop_contact"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/address"
+        android:inputType="textPostalAddress"
+        android:textColorHint="@color/saps_start"
+        android:textSize="20sp">
+
+    </EditText>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Shop"
+        android:onClick="AddShop"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layout_below="@id/glossary_shop_address"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/White"
+        android:background="@drawable/btn_style">
+
+    </Button>
+
+</RelativeLayout>

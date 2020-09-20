@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_color"
     tools:context=".Splash_screen"
-    android:accessibilityPaneTitle="false" tools:targetApi="p">
+    android:accessibilityPaneTitle="false">
 
 
     <ImageView
@@ -17,7 +17,7 @@
         android:layout_weight="1"
         app:srcCompat="@drawable/hsm_logo"
         android:translationX="60dp"
-        android:contentDescription="@string/app_logo" />
+        />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -25,10 +25,8 @@
         android:layout_height="100dp"
         android:layout_weight="1"
         android:translationX="-140dp"
-
         android:translationY="500dp"
-        tools:srcCompat="@drawable/saps_logo"
-        android:contentDescription="TODO" />
+        tools:srcCompat="@drawable/saps_logo" />
 
 
 </LinearLayout>
