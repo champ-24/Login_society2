@@ -57,6 +57,7 @@ public class Add_Associate extends AppCompatActivity {
 
             Toast.makeText(this, "Associate Registered", Toast.LENGTH_SHORT).show();
             finish();
+            //lskndckndscianiciain ifosdncoa oaifosaijdf osbvdousbnvjshf sdfnosdj cdhfisncjc sd
         }
 
     }
