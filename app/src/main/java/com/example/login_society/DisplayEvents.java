@@ -58,7 +58,6 @@ public class DisplayEvents extends AppCompatActivity {
                 list.clear();
                 for(DataSnapshot ds:dataSnapshot.getChildren())
                 {
-
                     user = ds.getValue(User.class);
                     list.add(user.getHost().toString()+"\n"+user.getEvent_name().toString()+"\n"+user.getDescription().toString()+"\n "+user.getDate().toString()+" \n"+user.getTime().toString());
 

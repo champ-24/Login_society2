@@ -2,12 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/gradient_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user_complaint">
-
-    <ListView
+    tools:context=".user_complaint">    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lv_complaint"
@@ -24,6 +21,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="25dp"
+        android:background="@color/saps_start"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         app:srcCompat="@android:drawable/ic_dialog_email" />

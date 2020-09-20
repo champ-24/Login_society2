@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_style"
-        android:text="Button" />
+        android:text="Login" />
 
     <TextView
         android:id="@+id/textView"
@@ -76,7 +76,7 @@
         android:gravity="center"
         android:text="REGISTER"
         android:fontFamily="monospace"
-        android:textColor="#02075D" />
+        android:textColor="#947D7D" />
 
 
 </LinearLayout>

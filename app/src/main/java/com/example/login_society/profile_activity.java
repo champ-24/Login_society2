@@ -41,9 +41,6 @@ public class profile_activity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_activity);
 
         toolbar=findViewById(R.id.toolbar);
-        activity_name=findViewById(R.id.activity_name);
-        activity_name.setText("Profile");
-
 
 //init fire base for dispplay
         firebaseAuth = FirebaseAuth.getInstance();

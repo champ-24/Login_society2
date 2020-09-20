@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,8 +22,12 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.zip.Inflater;
 
@@ -33,8 +38,9 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
     Toolbar toolbar;
     TextView events,notices,complaints,activity_name;
     RecyclerView rec_events,rec_notices,rec_complaints;
-
+    String user;
     DatabaseReference reference;
+    DatabaseReference databaseReference,database_ref_notice_complaint,d_ref_notice,d_ref_complaint;
 
     FirebaseRecyclerOptions<Event_helper> options;
     FirebaseRecyclerOptions<notice> notice_options;
@@ -43,16 +49,16 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
     FirebaseRecyclerAdapter<Event_helper,EventViewHolder> event_adapter;
     FirebaseRecyclerAdapter<notice,NoticeViewHolder> notice_adapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_activity);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Society").child("Event");
+        database_ref_notice_complaint = FirebaseDatabase.getInstance().getReference().child("Society");
+        d_ref_complaint = database_ref_notice_complaint.child("Complaint");
+        d_ref_notice = database_ref_notice_complaint.child("Notice");
 
         Initialization();
-        
-        activity_name.setText("Home");
 
         NavigationSupport();
 
@@ -125,32 +131,25 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
             @NonNull
             @Override
             public EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
                 View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.events_card,parent,false);
                 return new EventViewHolder(view);
-            }
-        };
-
+            } };
         event_adapter.startListening();
         rec_events.setAdapter(event_adapter);
     }
 
     public void NoticesHandler(){
-
         reference= FirebaseDatabase.getInstance().getReference().child("Society").child("Notice");
         notice_options= new FirebaseRecyclerOptions.Builder<notice>().setQuery(reference,notice.class).build();
         notice_adapter= new FirebaseRecyclerAdapter<notice, NoticeViewHolder>(notice_options) {
             @Override
             protected void onBindViewHolder(@NonNull NoticeViewHolder holder, int position, @NonNull notice model) {
-
                 holder.description.setText(model.getDescription());
                 holder.host.setText(model.getHost());
             }
-
             @NonNull
             @Override
             public NoticeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
                 View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.notice_card,parent,false);
                 return new NoticeViewHolder(view);
             }
@@ -161,11 +160,8 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
     }
 
     public void NavigationSupport(){
-
         setSupportActionBar(toolbar);
-
         navigationView.bringToFront();
-
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar, R.string.open_nav, R.string.close_nav);
         drawerLayout.addDrawerListener(toggle);
@@ -191,7 +187,7 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
                         return true ;
 
                     case R.id.proc:
-                        startActivity(new Intent(getApplicationContext(), procurement_activity.class));
+                        startActivity(new Intent(home_activity.this, procurement_activity.class));
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -203,8 +199,6 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
                 return false;
             }
         });
-
-
     }
 
     @Override
@@ -249,7 +243,18 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
         Intent intent= new Intent(this,register_event.class);
         startActivity(intent);
     }
-
+    public void deleteEvent(View view){
+       databaseReference.removeValue();
+        Toast.makeText(this, "Data deleted", Toast.LENGTH_SHORT).show();
+    }
+    public void deleteNotice(View view){
+        d_ref_notice.removeValue();
+        Toast.makeText(this, "Data deleted", Toast.LENGTH_SHORT).show();
+    }
+    public void deleteComplaint(View view){
+        d_ref_complaint.removeValue();
+        Toast.makeText(this, "Data deleted", Toast.LENGTH_SHORT).show();
+    }
 }
 
 

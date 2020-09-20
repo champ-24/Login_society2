@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.zip.Inflater;
 
+
 public class Grossary extends AppCompatActivity {
 
     RecyclerView grossary_shop_list;
@@ -68,7 +69,6 @@ public class Grossary extends AppCompatActivity {
         grossary_shop_list.setHasFixedSize(true);
 
         add_shop=findViewById(R.id.add_shop);
-
     }
 
     public void AddShop(View view) {

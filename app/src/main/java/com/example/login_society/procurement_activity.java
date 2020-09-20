@@ -34,8 +34,6 @@ public class procurement_activity extends AppCompatActivity implements Navigatio
 
         Initialization();
 
-        activity_name.setText("Procurement");
-
         NavigationSupport();
     }
 
@@ -46,10 +44,46 @@ public class procurement_activity extends AppCompatActivity implements Navigatio
         toolbar=findViewById(R.id.toolbar);
         activity_name=findViewById(R.id.activity_name);
 
-        grossary=findViewById(R.id.btn_grossary);
+        grossary=(Button)findViewById(R.id.btn_grossary);
+        grossary.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                grossary_call();
+            }
+
+        });
         electronics=findViewById(R.id.btn_electronics);
+        electronics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(procurement_activity.this, Electronics.class);
+                startActivity(intent);
+            }
+        });
         stationary=findViewById(R.id.btn_stationary);
+        stationary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(procurement_activity.this, Stationary.class);
+                startActivity(intent);
+            }
+        });
         dairy=findViewById(R.id.btn_dairy);
+        dairy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(procurement_activity.this, Dairy.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void grossary_call() {
+        Intent i = new Intent(this,Grossary.class);
+        startActivity(i);
     }
 
     private void NavigationSupport() {
@@ -94,26 +128,6 @@ public class procurement_activity extends AppCompatActivity implements Navigatio
                 return false;
             }
         });
-    }
-
-    public void Grossary(View view) {
-        Intent intent=new Intent(this, Grossary.class);
-        startActivity(intent);
-    }
-
-    public void Stationary(View view) {
-        Intent intent=new Intent(this,Stationary.class);
-        startActivity(intent);
-    }
-
-    public void Dairy(View view) {
-        Intent intent=new Intent(this,Dairy.class);
-        startActivity(intent);
-    }
-
-    public void Electronics(View view) {
-        Intent intent=new Intent(this,Electronics.class);
-        startActivity(intent);
     }
 
     @Override

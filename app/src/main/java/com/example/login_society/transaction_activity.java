@@ -47,8 +47,6 @@ public class transaction_activity extends AppCompatActivity implements Navigatio
 
         NavigationSupport();
 
-        activity_name.setText("Transaction");
-
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -6,22 +6,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@drawable/gradient_color"
     tools:context=".register_event">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_name"
+        android:background="@color/saps_end"
+        android:text="Event Registration"
+        android:textSize="24sp"
+        android:padding="5dp"
+        android:textColor="@color/saps_start"
+        />
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
     android:textSize="15dp"
-    android:textColor="@color/White"
+    android:textColor="@color/saps_start"
     android:text="**Enter the Time And Date According To Free Time"/>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:focusable="true"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/saps_start"
+        android:textColor="@color/saps_start"
         android:focusableInTouchMode="true"
         tools:ignore="MissingConstraints">
         <com.google.android.material.textfield.TextInputEditText
@@ -29,7 +38,7 @@
             android:id="@+id/host"
             android:layout_height="wrap_content"
             android:hint="Event Host"
-            android:textColor="#ffffff"
+            android:textColor="@color/saps_start"
             android:textSize="20dp"
             android:ems="10"
             android:inputType="text"
@@ -40,8 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:focusable="true"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/saps_start"
+        android:textColor="@color/saps_start"
         android:focusableInTouchMode="true"
         tools:ignore="MissingConstraints">
         <com.google.android.material.textfield.TextInputEditText
@@ -49,7 +58,7 @@
             android:id="@+id/event_name"
             android:layout_height="wrap_content"
             android:hint="Event Name"
-            android:textColor="#ffffff"
+            android:textColor="@color/saps_start"
             android:textSize="20dp"
             android:ems="10"
             android:inputType="text"
@@ -59,10 +68,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="0dp"
         android:focusable="true"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/saps_start"
+        android:textColor="@color/saps_start"
         android:focusableInTouchMode="true"
         tools:ignore="MissingConstraints">
         <com.google.android.material.textfield.TextInputEditText
@@ -70,7 +79,7 @@
             android:id="@+id/desc"
             android:layout_height="wrap_content"
             android:hint="Short Description"
-            android:textColor="#ffffff"
+            android:textColor="@color/saps_start"
             android:textSize="20dp"
             android:ems="10"
             android:inputType="text"
@@ -79,10 +88,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="0dp"
         android:focusable="true"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/saps_start"
+        android:textColor="@color/saps_start"
         android:focusableInTouchMode="true"
         tools:ignore="MissingConstraints">
         <com.google.android.material.textfield.TextInputEditText
@@ -90,7 +99,7 @@
             android:id="@+id/date"
             android:layout_height="wrap_content"
             android:hint="Enter the Date"
-            android:textColor="#ffffff"
+            android:textColor="@color/saps_start"
             android:textSize="20dp"
             android:ems="10"
             android:inputType="text"
@@ -99,10 +108,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="0dp"
         android:focusable="true"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/saps_start"
+        android:textColor="@color/saps_start"
         android:focusableInTouchMode="true"
         tools:ignore="MissingConstraints">
         <com.google.android.material.textfield.TextInputEditText
@@ -110,7 +119,7 @@
             android:id="@+id/time"
             android:layout_height="wrap_content"
             android:hint="Event Time"
-            android:textColor="#ffffff"
+            android:textColor="@color/saps_start"
             android:textSize="20dp"
             android:ems="10"
             android:inputType="text"
@@ -123,6 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_style"
+        android:textColor="@color/White"
         android:text="SAVE" />
 
 </LinearLayout>

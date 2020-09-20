@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".profile_activity"
     android:background="@drawable/gradient_color"
-    android:paddingBottom="20dp">
+    android:paddingBottom="0dp">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/my_nav"
@@ -15,7 +15,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
         app:itemBackground="@color/White"
-        android:paddingHorizontal="20dp"
+        android:paddingHorizontal="0dp"
         app:itemTextColor="@color/black"
         app:menu="@menu/menu_nav"
         tools:ignore="MissingConstraints" />

@@ -15,12 +15,23 @@
         <activity android:name=".user_complaint" />
         <activity android:name=".Associates" />
         <activity android:name=".DisplayEvents" />
+        <activity android:name=".Grossary"/>
+        <activity android:name=".AddShopGrossary"/>
+        <activity android:name=".Stationary"/>
+        <activity android:name=".AddShopStationary"/>
+        <activity android:name=".Electronics"/>
+        <activity android:name=".AddShopElectronics"/>
+        <activity android:name=".Dairy"/>
+        <activity android:name=".AddShopDairy"/>
+        <activity android:name=".Add_Associate"/>
+        <activity android:name=".Hardware"/>
+        <activity android:name=".AddShopHardware"/>
         <activity android:name=".register_event" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Choosingact" />
         <activity android:name=".profile_activity" />
         <activity android:name=".transaction_activity" />
-        <activity android:name=".procurment_activity" />
+        <activity android:name=".procurement_activity" />
         <activity
             android:name=".home_activity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -30,7 +41,6 @@
         <activity android:name=".Splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
