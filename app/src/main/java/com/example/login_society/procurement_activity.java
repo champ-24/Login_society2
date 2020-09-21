@@ -44,7 +44,7 @@ public class procurement_activity extends AppCompatActivity implements Navigatio
         toolbar=findViewById(R.id.toolbar);
         activity_name=findViewById(R.id.activity_name);
 
-        grossary=(Button)findViewById(R.id.btn_grossary);
+        grossary=findViewById(R.id.btn_grossary);
         grossary.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view){
@@ -91,17 +91,12 @@ public class procurement_activity extends AppCompatActivity implements Navigatio
         setSupportActionBar(toolbar);
 
         navigationView.bringToFront();
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar, R.string.open_nav, R.string.close_nav);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
         navigationView.setNavigationItemSelectedListener(this);
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.my_nav);
-
         bottomNavigationView.setSelectedItemId(R.id.proc);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -144,26 +139,21 @@ public class procurement_activity extends AppCompatActivity implements Navigatio
 
         switch (menuItem.getItemId()){
             case R.id.nav_events:
-                Intent intent = new Intent(this, DisplayEvents.class);
-                startActivity(intent);
+                startActivity(new Intent(this, DisplayEvents.class));
                 break;
 
             case R.id.nav_associates:
-                Intent intent1 = new Intent(this,Associates.class);
-                startActivity(intent1);
+                startActivity(new Intent(this,Associates.class));
                 break;
 
             case R.id.nav_complain:
-                Intent intent2 = new Intent(this,user_complaint.class);
-                startActivity(intent2);
+                startActivity(new Intent(this,user_complaint.class));
                 break;
 
             case R.id.nav_notice:
-                Intent intent3 = new Intent(this,user_notice.class);
-                startActivity(intent3);
+                startActivity(new Intent(this,user_notice.class));
                 break;
         }
-
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }

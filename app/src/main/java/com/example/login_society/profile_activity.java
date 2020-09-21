@@ -26,21 +26,21 @@ public class profile_activity extends AppCompatActivity {
 
     Button signout;
     TextView activity_name;
-   Toolbar toolbar;
+    Toolbar toolbar;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
     //from xml
-    TextView tname,temail,tphone,tsociety;
+    TextView tname, temail, tphone, tsociety;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_activity);
 
-        toolbar=findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
 
 //init fire base for dispplay
         firebaseAuth = FirebaseAuth.getInstance();
@@ -50,11 +50,11 @@ public class profile_activity extends AppCompatActivity {
 
         //init views
 
-        tname=findViewById(R.id.name);
-        temail=findViewById(R.id.email);
-        tphone=findViewById(R.id.ph_no);
-        tsociety=findViewById(R.id.soc_name);
-
+        tname = findViewById(R.id.name);
+        temail = findViewById(R.id.email);
+        tphone = findViewById(R.id.ph_no);
+        tsociety = findViewById(R.id.soc_name);
+        Navigation_Support();
         /*We need to get the current signed in user we can do this as follows*/
 
         //By using orderbychild query we will show the detail of the nnode and whose key name is same as email of the signed in user
@@ -66,12 +66,11 @@ public class profile_activity extends AppCompatActivity {
 
                 //check the data until we can get it
 
-                for(DataSnapshot ds : dataSnapshot.getChildren())
-                {
-                    String name = ""+ds.child("full_name").getValue();
-                    String email = ""+ds.child("email").getValue();
-                    String phone = ""+ds.child("phoneno").getValue();
-                    String soc_name = ""+ds.child("society_name").getValue();
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String name = "" + ds.child("full_name").getValue();
+                    String email = "" + ds.child("email").getValue();
+                    String phone = "" + ds.child("phoneno").getValue();
+                    String soc_name = "" + ds.child("society_name").getValue();
 
                     tname.setText(name);
                     temail.setText(email);
@@ -79,30 +78,36 @@ public class profile_activity extends AppCompatActivity {
                     tsociety.setText(soc_name);
 
                 }
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
+        //************************************************************************************************************
+        signout = findViewById(R.id.signout);
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Signout();
+            }
+        });
+    }
 
+    private void Signout() {
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
 
+        firebaseAuth.signOut();
+        Intent intent = new Intent(profile_activity.this, login_form.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        Toast.makeText(profile_activity.this, "BYE", Toast.LENGTH_SHORT).show();
+        startActivity(intent);
+    }
 
-
-
-
-
-
-
-
-
-
-        signout=(Button)findViewById(R.id.signout);
-
-        BottomNavigationView bottomNavigationView=findViewById(R.id.my_nav);
+    private void Navigation_Support() {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.my_nav);
         bottomNavigationView.setSelectedItemId(R.id.profile);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -111,13 +116,13 @@ public class profile_activity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(), home_activity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.transaction:
                         startActivity(new Intent(getApplicationContext(), transaction_activity.class));
                         overridePendingTransition(0, 0);
-                        return true ;
+                        return true;
 
                     case R.id.proc:
                         startActivity(new Intent(getApplicationContext(), procurement_activity.class));
@@ -130,30 +135,5 @@ public class profile_activity extends AppCompatActivity {
                 return false;
             }
         });
-        signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Signout();
-            }
-            });
-
-
-
     }
-
-    private void Signout() {
-
-        firebaseAuth=FirebaseAuth.getInstance();
-        firebaseUser=firebaseAuth.getCurrentUser();
-
-
-                firebaseAuth.signOut();
-                Intent intent=new Intent(profile_activity.this, login_form.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                Toast.makeText(profile_activity.this, "ISGN OUT SUCESSFULLY", Toast.LENGTH_SHORT).show();
-                startActivity(intent);
-            }
-    }
-
-
+}

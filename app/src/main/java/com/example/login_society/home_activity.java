@@ -22,14 +22,8 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.zip.Inflater;
 
 public class home_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -38,7 +32,6 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
     Toolbar toolbar;
     TextView events,notices,complaints,activity_name;
     RecyclerView rec_events,rec_notices,rec_complaints;
-    String user;
     DatabaseReference reference;
     DatabaseReference databaseReference,database_ref_notice_complaint,d_ref_notice,d_ref_complaint;
 
@@ -168,11 +161,8 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
-
         BottomNavigationView bottomNavigationView=findViewById(R.id.my_nav);
-
         bottomNavigationView.setSelectedItemId(R.id.home);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

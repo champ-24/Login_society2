@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
-        app:itemBackground="@color/White"
+        app:itemBackground="@color/saps_end"
         android:paddingHorizontal="0dp"
-        app:itemTextColor="@color/black"
+        app:itemTextColor="@color/White"
         app:menu="@menu/menu_nav"
         tools:ignore="MissingConstraints" />
     <RelativeLayout
@@ -52,9 +52,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:background="@color/mix"/>
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
